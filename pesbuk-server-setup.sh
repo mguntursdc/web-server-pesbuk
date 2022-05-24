@@ -9,7 +9,10 @@ if [ $? -eq 0 ]; then
 else
         echo "Apache2 belum terinstall"
         sudo apt-get install -y apache2 php php-mysql
+        rm /var/www/html/index.html
+
         systemctl status mysql
+
         if [ $? -eq 0]; then
           echo "MySql sudah terinstall"
         else
